@@ -1,18 +1,11 @@
 {
-  ""scripts": {
-  "dev": "next dev",
-  "build": "prisma generate && next build",
-  "start": "next start",
-  "postinstall": "prisma generate"
-}
-,
-
   "name": "ai-quiz-maker",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
+    "postinstall": "prisma generate",
     "prisma:studio": "prisma studio"
   },
   "dependencies": {
@@ -40,5 +33,4 @@
     "tailwindcss": "^4",
     "typescript": "^5"
   }
-
 }
