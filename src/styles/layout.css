@@ -1,0 +1,66 @@
+/* Layout-specific styles */
+
+/* Main content area */
+main {
+  min-height: calc(100vh - 80px); /* Account for nav height */
+  padding: 2rem 0;
+}
+
+/* Page containers */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Responsive grid layouts */
+.grid-responsive {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Content sections */
+.content-section {
+  margin-bottom: 2rem;
+}
+
+.content-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.content-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--foreground);
+}
+
+/* Form layouts */
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Navigation styles are now handled in globals.css to avoid conflicts */

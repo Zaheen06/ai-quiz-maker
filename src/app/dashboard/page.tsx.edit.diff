@@ -1,0 +1,18 @@
+const [me, setMe] = useState<any>(null);
+  const [topic, setTopic] = useState("");
+  const [creating, setCreating] = useState(false);
+  const [quizzes, setQuizzes] = useState<Quiz[]>([]);
+
+  useEffect(() => {
+=======
+export default function Dashboard() {
+  const [me, setMe] = useState<any>(null);
+  const [topic, setTopic] = useState("");
+  const [creating, setCreating] = useState(false);
+  const [quizzes, setQuizzes] = useState<Quiz[]>([]);
+
+  function clearQuizzes() {
+    setQuizzes([]);
+  }
+
+  useEffect(() => {
