@@ -1,4 +1,10 @@
 {
+  "scripts": {
+  "dev": "next dev",
+  "build": "prisma generate && next build",
+  "start": "next start",
+  "postinstall": "prisma generate"
+},
 
   "name": "ai-quiz-maker",
   "private": true,
