@@ -23,10 +23,7 @@ This app allows users to generate quizzes dynamically, attempt them, and track r
 - **Auth:** JSON Web Tokens (JWT) + bcrypt  
 - **AI Integration:** Google Generative AI (Gemini API)  
 
----
 
-yaml
-Copy code
 
 ---
 
