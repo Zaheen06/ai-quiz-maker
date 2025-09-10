@@ -30,7 +30,7 @@ This app allows users to generate quizzes dynamically, attempt them, and track r
 ## ⚙️ Setup Instructions  
 
 ### 1️⃣ Clone the repository
-```sh
+
 git clone https://github.com/Zaheen06/ai-quiz-maker.git
 cd ai-quiz-maker
 2️⃣ Install dependencies
@@ -45,8 +45,7 @@ Copy code
 npx prisma generate
 npx prisma db push
 5️⃣ Run the development server
-sh
-Copy code
+
 npm run dev
 Visit 👉 http://localhost:3000
 
@@ -57,8 +56,6 @@ Make sure to set the same .env variables in your Vercel dashboard.
 
 Vercel automatically builds using:
 
-json
-Copy code
 "scripts": {
   "build": "prisma generate && next build",
   "postinstall": "prisma generate"
@@ -70,7 +67,7 @@ Pull requests are welcome! If you’d like to contribute, fork the repo and subm
 
 
 
-✨ Made with ❤️ by Zaheen06
+✨ Made  by Zaheen06
 
-vbnet
-Copy code
+Link:https://ai-quiz-maker-sigma.vercel.app/
+
