@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🧠 AI Quiz Maker
 
-## Getting Started
+An intelligent quiz generation platform built with Next.js, Prisma, Neon (Postgres), and Google Gemini API.
+This app allows users to generate quizzes dynamically, attempt them, and track results — all powered by AI.
 
-First, run the development server:
+🚀 Features
 
-```bash
+🔐 Authentication (JWT-based login & signup)
+
+📝 AI-Powered Quiz Generation using Google Gemini API
+
+📊 Database Integration with Neon (PostgreSQL + Prisma ORM)
+
+🎯 Quiz Attempt Tracking
+
+🎨 Modern UI with Next.js 15 + Tailwind CSS
+
+☁️ Deployment Ready with Vercel
+
+🛠️ Tech Stack
+
+Frontend: Next.js 15, React 19, Tailwind CSS
+
+Backend: Next.js API Routes
+
+Database: PostgreSQL (Neon)
+
+ORM: Prisma
+
+Auth: JSON Web Tokens (JWT) + bcrypt
+
+AI Integration: Google Generative AI (Gemini API)
+
+📂 Project Structure
+ai-quiz-maker/
+│── prisma/           # Prisma schema & migrations
+│── app/              # Next.js App Router (pages, API routes)
+│── components/       # Reusable UI components
+│── styles/           # Global styles
+│── package.json      # Project config & scripts
+│── .env              # Environment variables
+
+⚙️ Setup Instructions
+1️⃣ Clone the repository
+git clone https://github.com/Zaheen06/ai-quiz-maker.git
+cd ai-quiz-maker
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Configure environment variables
+
+Create a .env file in the root folder and add:
+
+DATABASE_URL="your_neon_postgres_url"
+JWT_SECRET="your_jwt_secret"
+GEMINI_API_KEY="your_google_gemini_api_key"
+
+4️⃣ Setup Prisma & Database
+npx prisma generate
+npx prisma db push
+
+5️⃣ Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Visit 👉 http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🚀 Deployment
 
-## Learn More
+This project is ready to deploy on Vercel.
 
-To learn more about Next.js, take a look at the following resources:
+Make sure to set the same .env variables in your Vercel dashboard.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Vercel automatically builds using:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+"scripts": {
+  "build": "prisma generate && next build",
+  "postinstall": "prisma generate"
+}
 
-## Deploy on Vercel
+📸 Screenshots (optional)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+(You can add screenshots of your UI here once ready)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🤝 Contributing
+
+Pull requests are welcome! If you’d like to contribute, fork the repo and submit a PR.
+
+📜 License
+
+This project is licensed under the MIT License.
+
+✨ Made with ❤️ by Zaheen06
