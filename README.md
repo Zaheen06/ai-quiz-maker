@@ -28,7 +28,7 @@ This app allows users to generate quizzes dynamically, attempt them, and track r
 ## 📂 Project Structure
 ai-quiz-maker/
 │── prisma/ # Prisma schema & migrations
-│── app/ # Next.js App Router (pages, API routes)
+│── app/ # Next.js App Router 
 │── components/ # Reusable UI components
 │── styles/ # Global styles
 │── package.json # Project config & scripts
@@ -52,12 +52,6 @@ npm install
 3️⃣ Configure environment variables
 Create a .env file in the root folder and add:
 
-env
-Copy code
-DATABASE_URL="your_neon_postgres_url"
-JWT_SECRET="your_jwt_secret"
-GEMINI_API_KEY="your_google_gemini_api_key"
-4️⃣ Setup Prisma & Database
 sh
 Copy code
 npx prisma generate
@@ -81,14 +75,12 @@ Copy code
   "build": "prisma generate && next build",
   "postinstall": "prisma generate"
 }
-📸 Screenshots (optional)
-(You can add screenshots of your UI here once ready)
+
 
 🤝 Contributing
 Pull requests are welcome! If you’d like to contribute, fork the repo and submit a PR.
 
-📜 License
-This project is licensed under the MIT License.
+
 
 ✨ Made with ❤️ by Zaheen06
 
