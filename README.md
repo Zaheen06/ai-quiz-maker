@@ -25,15 +25,6 @@ This app allows users to generate quizzes dynamically, attempt them, and track r
 
 ---
 
-## 📂 Project Structure
-ai-quiz-maker/
-│── prisma/ # Prisma schema & migrations
-│── app/ # Next.js App Router 
-│── components/ # Reusable UI components
-│── styles/ # Global styles
-│── package.json # Project config & scripts
-│── .env # Environment variables
-
 yaml
 Copy code
 
