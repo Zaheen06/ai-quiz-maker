@@ -7,7 +7,7 @@ export async function generateQuizQuestions(topic: string) {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   const prompt = `
-You are a quiz generator. Create exactly 4 multiple-choice questions on the topic: "${topic}".
+You are a quiz generator. Create exactly 8 multiple-choice questions on the topic: "${topic}".
 For each question provide:
 - question: one sentence
 - options: four concise choices labeled A, B, C, D
