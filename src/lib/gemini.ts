@@ -4,7 +4,7 @@ const apiKey = process.env.GEMINI_API_KEY!;
 export const genAI = new GoogleGenerativeAI(apiKey);
 
 export async function generateQuizQuestions(topic: string) {
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   const prompt = `
 You are a quiz generator. Create exactly 8 multiple-choice questions on the topic: "${topic}".
