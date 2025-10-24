@@ -1,3 +1,0 @@
-- [x] Update model name in src/lib/gemini.ts from "gemini-1.5-flash" to "gemini-2.5-flash"
-- [x] Update model name in src/app/api/quiz/generate/route.ts from "gemini-1.5-flash" to "gemini-2.5-flash"
-- [x] Set DATABASE_URL, JWT_SECRET, and GEMINI_API_KEY in .env.local
