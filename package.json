@@ -6,7 +6,8 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "postinstall": "prisma generate",
-    "prisma:studio": "prisma studio"
+    "prisma:studio": "prisma studio",
+    "keep-alive": "node keepAlive.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -15,6 +16,8 @@
     "cookie": "^1.0.2",
     "jsonwebtoken": "^9.0.2",
     "next": "15.5.2",
+    "node-cron": "^4.2.1",
+    "pg": "^8.16.3",
     "prisma": "^6.15.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
