@@ -15,12 +15,16 @@ export async function POST(req: Request) {
 
     const body = await req.json();
     const topic = body.topic?.trim();
+    const difficulty = body.difficulty || "Medium"; // Easy, Medium, Hard
+    const amount = Math.min(Math.max(parseInt(body.amount) || 5, 1), 10); // Clamp between 1 and 10
+
     if (!topic) {
       return NextResponse.json({ error: "Topic is required" }, { status: 400 });
     }
 
     const prompt = `
-Generate 4 multiple-choice questions on the topic: "${topic}".
+Generate ${amount} multiple-choice questions on the topic: "${topic}".
+Difficulty Level: ${difficulty}.
 Each question must have:
 - text
 - optionA, optionB, optionC, optionD
@@ -52,6 +56,7 @@ Return only valid JSON array.
     const quiz = await prisma.quiz.create({
       data: {
         topic,
+        difficulty,
         authorId: user.id,
         questions: {
           create: questions.map((q: any) => ({

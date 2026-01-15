@@ -8,7 +8,16 @@ export default function SignupPage() {
   const [msg, setMsg] = useState("");
   const [loading, setLoading] = useState(false);
 
-  async function submit() {
+  async function submit(e?: React.FormEvent) {
+    if (e) e.preventDefault();
+    if (!name || !email || !password) {
+      setMsg("Please fill in all fields");
+      return;
+    }
+    if (password.length < 6) {
+      setMsg("Password must be at least 6 characters");
+      return;
+    }
     setMsg("");
     setLoading(true);
     try {
@@ -39,42 +48,49 @@ export default function SignupPage() {
           </div>
           <div className="glass card p-8">
             <h1 className="text-2xl font-bold mb-6 text-center">Join Us</h1>
-            <div className="mb-5">
-              <label className="block text-sm font-semibold mb-2">Full Name</label>
-              <input
-                value={name}
-                onChange={e => setName(e.target.value)}
-                className="w-full rounded-lg border border-border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 bg-white text-black"
-                placeholder="Enter your full name"
-              />
-            </div>
-            <div className="mb-5">
-              <label className="block text-sm font-semibold mb-2">Email Address</label>
-              <input
-                type="email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                className="w-full rounded-lg border border-border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 bg-white text-black"
-                placeholder="you@example.com"
-              />
-            </div>
-            <div className="mb-6">
-              <label className="block text-sm font-semibold mb-2">Password</label>
-              <input
-                type="password"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                className="w-full rounded-lg border border-border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 bg-white text-black"
-                placeholder="Enter your password"
-              />
-            </div>
-            <button
-              onClick={submit}
-              disabled={loading}
-              className="btn btn-primary w-full"
-            >
-              {loading ? "Processing..." : "Continue"}
-            </button>
+            <form onSubmit={submit}>
+              <div className="mb-5">
+                <label className="block text-sm font-semibold mb-2">Full Name</label>
+                <input
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                  className="w-full rounded-lg border border-border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 bg-white text-black"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+              <div className="mb-5">
+                <label className="block text-sm font-semibold mb-2">Email Address</label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  className="w-full rounded-lg border border-border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 bg-white text-black"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+              <div className="mb-6">
+                <label className="block text-sm font-semibold mb-2">Password</label>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                  className="w-full rounded-lg border border-border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 bg-white text-black"
+                  placeholder="Enter your password (min. 6 characters)"
+                  required
+                  minLength={6}
+                />
+                <p className="text-xs text-muted-foreground mt-1">At least 6 characters</p>
+              </div>
+              <button
+                type="submit"
+                disabled={loading}
+                className="btn btn-primary w-full"
+              >
+                {loading ? "Processing..." : "Continue"}
+              </button>
+            </form>
             {msg && (
               <div className={`mt-4 p-3 rounded-lg text-center text-sm ${msg.includes("Success") ? "bg-green-50 text-green-700 border border-green-200" : "bg-red-50 text-red-700 border border-red-200"}`}>
                 {msg}

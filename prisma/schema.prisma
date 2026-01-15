@@ -25,6 +25,7 @@ model Quiz {
   author    User        @relation(fields: [authorId], references: [id])
   questions Question[]
   attempts  Attempt[]
+  difficulty String?
 }
 
 model Question {
