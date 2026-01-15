@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">QuizNest</string>
+    <string name="title_activity_main">QuizNest</string>
+    <string name="package_name">com.quiznest.app</string>
+    <string name="custom_url_scheme">com.quiznest.app</string>
+</resources>

@@ -3,22 +3,25 @@ import "../styles/navbar.css";
 import UserNav from "@/components/UserNav";
 import Link from "next/link";
 
-export const metadata = {
+import type { Metadata, Viewport } from 'next';
+
+export const metadata: Metadata = {
   title: "QuizNest - AI Quiz Maker",
   description: "Create AI-powered quizzes in seconds",
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-    viewportFit: 'cover',
-  },
-  themeColor: '#6366f1',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
     title: 'QuizNest',
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: 'cover',
+  themeColor: '#6366f1',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
