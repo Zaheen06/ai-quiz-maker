@@ -25,7 +25,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-actions">
-          <Link href="/auth/signup" className="cta-button cta-button-large">
+          <Link href="/auth/login" className="cta-button cta-button-large">
             Get Started Free →
           </Link>
           <Link href="/dashboard" className="secondary-link">
