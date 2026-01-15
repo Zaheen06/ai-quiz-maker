@@ -10,6 +10,10 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
 
   const handleGoogleLogin = async () => {
+    if (!auth || !googleProvider) {
+      setError("Google Sign-In is not available. Please try again later.");
+      return;
+    }
     setLoading(true);
     setError("");
     try {
