@@ -17,9 +17,24 @@ export function verifyJwt<T = any>(token: string): T | null {
 
 export async function getUserFromCookie() {
   const cookieStore = await cookies();
-  const token = cookieStore.get("token")?.value;
+  // Check for 'session' cookie first (new auth), then 'token' (legacy)
+  const token = cookieStore.get("session")?.value || cookieStore.get("token")?.value;
+
   if (!token) return null;
-  const decoded = verifyJwt<{ id: number }>(token);
+
+  // Try verifying
+  const decoded = verifyJwt<{ id?: number; email?: string }>(token);
   if (!decoded) return null;
-  return prisma.user.findUnique({ where: { id: decoded.id } });
+
+  // If we have an ID (legacy or database ID), use it
+  if (decoded.id) {
+    return prisma.user.findUnique({ where: { id: decoded.id } });
+  }
+
+  // If we have an email (OAuth flow), use it
+  if (decoded.email) {
+    return prisma.user.findUnique({ where: { email: decoded.email } });
+  }
+
+  return null;
 }

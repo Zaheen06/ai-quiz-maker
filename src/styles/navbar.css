@@ -1,16 +1,18 @@
-/* Enhanced Navbar Styles */
-
 /* Main Navigation */
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2.5rem;
+    /* Account for iOS notch */
+    padding-top: max(1rem, env(safe-area-inset-top, 1rem));
+    padding-left: max(2.5rem, env(safe-area-inset-left, 2.5rem));
+    padding-right: max(2.5rem, env(safe-area-inset-right, 2.5rem));
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 72px;
+    min-height: 72px;
     z-index: 1000;
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
