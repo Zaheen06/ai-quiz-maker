@@ -29,12 +29,10 @@ export async function DELETE() {
           where: { quizId: { in: quizIds } },
         });
 
-        // Delete all quizzes for the current user
-        // Use raw query with CASCADE to handle foreign key constraints properly
-        // MySQL does not support CASCADE in DELETE statement, so delete quizzes individually
-        for (const quizId of quizIds) {
-          await tx.$executeRaw`DELETE FROM quiz WHERE id = ${quizId}`;
-        }
+        // Delete all quizzes for the current user using Prisma
+        await tx.quiz.deleteMany({
+          where: { authorId: user.id },
+        });
       }
     });
 
